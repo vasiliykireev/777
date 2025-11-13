@@ -12,6 +12,7 @@ Clone the repository and navigate to the project folder:
 ```bash
 git clone https://github.com/vasiliykireev/777.git
 cd 777
+```
 
 ## ▶️ Run the game
 
