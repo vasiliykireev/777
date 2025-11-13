@@ -22,20 +22,27 @@ Run the script:
 python play.py
 ```
 
-You can specify your bet amount:
+You can specify your **bet amount**:
 
 ```bash
 python play.py --bet 100
 python play.py -b 100
 ```
 
-And spin:
-```0``` — no animation
-```1``` — spinning animation, default
+You can control the **spin animation and speed** using the `--speed` (`-s`) argument:
+
+- `0` — no animation (only the final result is shown)  
+- `1–9` — spinning animation, where `1` is slow and `9` is fast  
+- Default: `5`
 
 ```bash
-python play.py --spin 0
-python play.py -r 0
+python play.py --speed 5 # Default speed
+python play.py --speed 1 # Slowest
+python play.py --speed 9 # Fastest
+python play.py --speed 0 # No animation
+
+# Custom bet with fast spinning
+python play.py -b 50 -s 7
 ```
 
 Use ```python3``` instead of ```python``` on macOS and Linux.
