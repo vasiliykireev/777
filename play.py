@@ -16,10 +16,8 @@ class Game:
         r'..0': 1
     }
 
-    def __init__(self, spin = 1, bet = 1):
-        if spin == 0: self.spin = False
-        else: self.spin = True
-        self._winnings = self.check_result(self.play(self.spin), bet)
+    def __init__(self, speed = 5, bet = 1):
+        self._winnings = self.check_result(self.play(speed), bet)
 
     @property
     def winnings(self):
@@ -28,7 +26,7 @@ class Game:
         """
         return self._winnings
 
-    def play(self, spin):
+    def play(self, speed):
         """
         Игра в автомат
 
@@ -38,10 +36,12 @@ class Game:
         Возвращает str: 3 цифры
         """
         digits = ['', '', '']
-        if spin == True:
-            spins = 100
-        else:
+        time_sleep = 0
+        if speed == 0:
             spins = 1
+        else:
+            time_sleep = 0.1 - (max(1, min(speed, 9)) - 1) * (0.1 - 0.01) / 8
+            spins = 100
         for p in range(spins):
             if p < 50:
                 digits[0] = self.random_digit()
@@ -54,7 +54,7 @@ class Game:
                 digits[2] = self.random_digit()
             result = ''.join(digits)
             print(f"\r{result}", end="", flush=True)
-            time.sleep(0.05)
+            time.sleep(time_sleep)
         return result
 
     def random_digit(self):
@@ -91,11 +91,11 @@ if __name__ == "__main__":
         help="bet: int, default = 1",
     )
     parser.add_argument(
-        "--spin", "-r",
+        "--speed", "-s",
         type=int,
-        default=1,
-        help="spin: int, 0 = False, 1 = True",
+        default=5,
+        help="speed: int, 1 (slow) to 9 (fast), 0 = no animation, default = 5",
     )
     args = parser.parse_args()
-play = Game(args.spin, args.bet)
+play = Game(args.speed, args.bet)
 print("\nWinning: ", play.winnings)
