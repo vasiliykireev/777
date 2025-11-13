@@ -73,7 +73,7 @@ Use ```python3``` instead of ```python``` on macOS and Linux.
 765
 776
 777
-You win: 200!
+Winning: 200!
 ```
 
 ---
