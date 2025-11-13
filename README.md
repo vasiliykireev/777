@@ -19,20 +19,22 @@ cd 777
 Run the script:
 
 ```bash
-python play.py
+python3 play.py
 ```
 
 You can also specify your bet amount:
 
 ```bash
-python play.py --bet 100
+python3 play.py --bet 100
 ```
 
 or the short form:
 
 ```bash
-python play.py -b 100
+python3 play.py -b 100
 ```
+
+Use ```python3``` instead of ```python``` on macOS and Linux.
 
 ---
 
