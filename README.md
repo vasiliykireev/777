@@ -19,19 +19,23 @@ cd 777
 Run the script:
 
 ```bash
-python3 play.py
+python play.py
 ```
 
-You can also specify your bet amount:
+You can specify your bet amount:
 
 ```bash
-python3 play.py --bet 100
+python play.py --bet 100
+python play.py -b 100
 ```
 
-or the short form:
+And spin:
+```0``` — no animation
+```1``` — spinning animation, default
 
 ```bash
-python3 play.py -b 100
+python play.py --spin 0
+python play.py -r 0
 ```
 
 Use ```python3``` instead of ```python``` on macOS and Linux.
