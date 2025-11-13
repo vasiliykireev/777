@@ -87,4 +87,4 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 play = Game(args.bet)
-print("\nВыигрыш: ", play.winnings)
+print("\nWinning: ", play.winnings)
